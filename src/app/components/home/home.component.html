@@ -1,0 +1,30 @@
+<div >
+<table class="table">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">Clinic Name</th>
+        <th scope="col">Address</th>
+        <th scope="col">City</th>
+        <th scope="col">State</th>
+        <th scope="col">Country</th>
+        <th scope="col">Contact Number</th>
+        <th scope="col">Email Id</th>
+        <th scope="col">Select</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let l of list">       
+        <td>{{l.id}}</td>
+        <td>{{l.clinicName}}</td>
+        <td>{{l.address}}</td>
+        <td>{{l.city}}</td>
+        <td>{{l.state}}</td>
+        <td>{{l.country}}</td>
+        <td>{{l.contactNumber}}</td>
+        <td>{{l.emailId}}</td>
+        <td><button (click)="clinic()">Select Clinic</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

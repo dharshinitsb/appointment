@@ -1,0 +1,94 @@
+<div class="reg">
+<div class="card m-3">
+    <h3 class="card-header">Register</h3>
+    <div class="card-body">
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <div class="form-group col">
+          <label>UserName</label>
+          <input
+            type="text"
+            formControlName="username"
+            class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f['username'].errors }"
+          />
+          <div *ngIf="submitted && f['username'].errors" class="invalid-feedback">
+            <div *ngIf="f['username'].errors?.['required']">User Name is required</div>
+          </div>
+        </div>
+        <div class="form-group col">
+          <label>Patient Name</label>
+          <input
+            type="text"
+            formControlName="patientName"
+            class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f['patientName'].errors }"
+          />
+          <div *ngIf="submitted && f['patientName'].errors" class="invalid-feedback">
+            <div *ngIf="f['patientName'].errors?.['required']">Patient Name is required</div>
+          </div>
+        </div>
+        <div class="form-group col">
+          <label>Email</label>
+          <input
+            type="text"
+            formControlName="emailId"
+            class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f['emailId'].errors }"
+          />
+          <div *ngIf="submitted && f['emailId'].errors" class="invalid-feedback">
+            <div *ngIf="f['emailId'].errors?.['required']">Email is required</div>
+            <div *ngIf="f['emailId'].errors?.['email']">
+              Email must be a valid email address
+            </div>
+          </div>
+        </div>
+        <div class="form-group col">
+          <label>Password</label>
+          <input
+            type="password"
+            formControlName="password"
+            class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f['password'].errors }"
+          />
+          <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
+            <div *ngIf="f['password'].errors?.['required']">Password is required</div>
+            <div *ngIf="f['password'].errors?.['minlength']">
+              Password must be at least 6 characters
+            </div>
+          </div>
+        </div>
+        <div class="form-group col">
+          <label>Address</label>
+          <input rows="3" cols="20"  type="textArea"
+          formControlName="address"
+          class="form-control"
+          [ngClass]="{ 'is-invalid': submitted && f['address'].errors }"/>
+         
+          <div *ngIf="submitted && f['address'].errors" class="invalid-feedback">
+            <div *ngIf="f['address'].errors?.['required']">Address is required</div>
+          </div>
+        </div>
+        <div class="form-group col">
+          <label>Contact Number</label>
+          <input
+            type="number"
+            formControlName="contactNumber"
+            class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f['contactNumber'].errors }"
+          />
+          <div *ngIf="submitted && f['contactNumber'].errors" class="invalid-feedback">
+            <div *ngIf="f['contactNumber'].errors?.['required']">Contact Number is required</div>
+          </div>
+        </div>
+        <div class="text-center">
+          <button class="btn btn-primary mr-1">Register</button>
+          <button class="btn btn-secondary" type="reset" (click)="onReset()">
+            Cancel
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+  
+  

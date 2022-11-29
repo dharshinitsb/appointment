@@ -1,0 +1,28 @@
+<div class="bg-img">
+    <div class="bootstrap-wrapper">
+      <div class="container mt">
+           <div class="row">
+                <div class="col-md-6 offset-md-3">
+                  <br><br>
+                   <form (ngSubmit)="onSubmit()">
+                            <mat-form-field class="full-width">
+                                <a>User Name</a>
+                                <input type="text" [(ngModel)]="credentials.username" name="username"  matInput required/>
+                            </mat-form-field>
+                            <mat-form-field class="full-width"><br>
+                                <a>Password</a>
+                                <input type="password" [(ngModel)]="credentials.password" name="password"   matInput required/>
+                            </mat-form-field>
+                       <h1 style="color: red;">{{msg}}</h1>
+                        <button type="submit" mat-raised-button color="primary">
+                            Login
+                        </button>
+                        <button style="margin-left: 10px;" type="reset" mat-raised-button color="primary">Reset</button>
+                    <br><br>
+                    <small >New user register here<a style="text-decoration: blue underline;color: red;" (click)="registerPage()">Register Here</a></small>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
